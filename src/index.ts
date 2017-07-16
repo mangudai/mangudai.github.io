@@ -8,6 +8,7 @@ monaco.editor.create(document.querySelector('.editor') as HTMLElement, {
   language: 'aoe2-rms',
   roundedSelection: false,
   scrollBeyondLastLine: false,
+  wordWrap: 'on',
   theme: 'vs-dark',
   value: example
 })
