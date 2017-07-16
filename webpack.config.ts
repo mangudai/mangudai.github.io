@@ -1,4 +1,6 @@
+const path = require('path')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/index.ts',
@@ -11,9 +13,12 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.min.js'
   },
+  devtool: 'source-map',
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
+    new CopyWebpackPlugin([{ from: 'node_modules/monaco-editor', to: 'monaco-editor' }])
   ]
 }

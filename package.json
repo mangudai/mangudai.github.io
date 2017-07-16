@@ -21,6 +21,7 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
+    "copy-webpack-plugin": "^4.0.1",
     "mangudai": "^0.1.4",
     "monaco-editor": "^0.9.0",
     "ts-loader": "^2.3.0",
