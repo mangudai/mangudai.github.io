@@ -1,0 +1,34 @@
+{
+  "name": "mangudai.github.io",
+  "description": "Age of Empires 2 Random Map Scripting for humans",
+  "author": "Mangudai",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangudai/mangudai.github.io.git"
+  },
+  "homepage": "https://github.com/mangudai/mangudai.github.io",
+  "bugs": {
+    "url": "https://github.com/mangudai/mangudai.github.io/issues"
+  },
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "webpack",
+    "deploy": "gh-pages --dist . --src index.html --src bundle.min.js --src style.css --no-push"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.13",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "gh-pages": "^1.0.0",
+    "mangudai": "^0.1.4",
+    "monaco-editor": "^0.9.0",
+    "ts-loader": "^2.3.0",
+    "tslint": "^5.2.0",
+    "tslint-config-standard": "^6.0.1",
+    "typescript": "^2.1.5",
+    "webpack": "^3.3.0"
+  }
+}
