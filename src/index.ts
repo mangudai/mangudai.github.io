@@ -1,10 +1,12 @@
-import { example } from './rms-example'
-import { language } from './rms-monarch-language'
 import { throttle } from 'lodash'
 import { parse, lint } from 'mangudai'
+import { language } from './rms-monarch-language'
+import { theme } from './monokai-theme'
+import { example } from './rms-example'
 
 monaco.languages.register({ id: 'aoe2-rms' })
 monaco.languages.setMonarchTokensProvider('aoe2-rms', language)
+monaco.editor.defineTheme('monokai', theme)
 
 const model = monaco.editor.createModel(example, 'aoe2-rms')
 model.onDidChangeContent(() => {
@@ -30,5 +32,5 @@ monaco.editor.create(document.querySelector('.editor') as HTMLElement, {
   scrollBeyondLastLine: false,
   cursorBlinking: 'smooth',
   wordWrap: 'on',
-  theme: 'vs-dark'
+  theme: 'monokai'
 })
