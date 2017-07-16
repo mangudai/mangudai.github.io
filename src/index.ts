@@ -1,19 +1,13 @@
+import { example } from './rms-example'
+import { language } from './rms-monarch-language'
+
+monaco.languages.register({ id: 'aoe2-rms' })
+monaco.languages.setMonarchTokensProvider('aoe2-rms', language)
+
 monaco.editor.create(document.querySelector('.editor') as HTMLElement, {
+  language: 'aoe2-rms',
   roundedSelection: false,
   scrollBeyondLastLine: false,
   theme: 'vs-dark',
-  value: [
-    '<PLAYER_SETUP>',
-    'random_placement',
-    '',
-    '<LAND_GENERATION>',
-    'base_terrain GRASS',
-    '',
-    '<OBJECTS_GENERATION>',
-    'create_object TOWN_CENTER {',
-    '  set_place_for_every_player',
-    '  max_distance_to_players 0',
-    '}',
-    ''
-  ].join('\n')
+  value: example
 })
