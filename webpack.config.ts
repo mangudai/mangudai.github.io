@@ -3,14 +3,14 @@ const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   module: {
     rules: [
-      { test: /\.ts$/, exclude: /node_modules/, use: 'ts-loader' }
+      { test: /\.tsx?$/, exclude: /node_modules/, use: 'ts-loader' }
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.tsx', '.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,6 +18,7 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') }}),
     new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
     new CopyWebpackPlugin([{ from: 'node_modules/monaco-editor', to: 'monaco-editor' }])
   ]
